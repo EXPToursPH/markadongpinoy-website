@@ -420,3 +420,37 @@ html,body{overflow-x:clip}
   .poster .ctas .btn{width:100%}
   .shapes{height:250px}
 }
+
+/* ---------- Corner-anchored suns ----------
+   Whenever the sun is cropped, its centre sits exactly on a corner,
+   so only a quarter shows: one full ray plus a half ray along each edge. */
+body .hero-panel{position:relative}
+body .panel-top > *:not(.hero-sun){position:relative;z-index:1}
+body .hero-sun{position:absolute;z-index:0;left:auto;bottom:auto;right:0;top:0;width:260px;transform:translate(50%,-50%)}
+body .band{position:relative}
+body .band .container{position:relative;z-index:1}
+body .band-sun{position:absolute;z-index:0;right:0;bottom:0;width:600px;transform:translate(50%,50%);pointer-events:none}
+body .pricing-top .sun-deco{left:0;top:0;right:auto;bottom:auto;width:400px;transform:translate(-50%,-50%)}
+body .page-head .sun-deco{right:0;top:0;left:auto;width:440px;transform:translate(50%,-50%)}
+body .poster .sun-deco{right:0;top:0;left:auto;width:440px;transform:translate(50%,-50%);z-index:1}
+body .poster .s-y,body .poster .s-r{display:none}
+body .poster .s-g{display:block;top:auto;right:0;bottom:0;width:220px;height:220px;border-radius:220px 0 0 0}
+
+/* footer sign-up: the button keeps its full width on iPhone Safari */
+.subscribe input{width:100%;font-size:16px}
+.subscribe .btn{flex:none}
+
+@media (max-width:980px){
+  body .hero-sun{width:200px}
+  body .band-sun{width:420px}
+  body .page-head .sun-deco{width:300px}
+}
+@media (max-width:640px){
+  body .hero-sun{width:160px}
+  body .band-sun{width:280px}
+  body .pricing-top .sun-deco{width:180px}
+  body .page-head .sun-deco{width:200px}
+  body .poster{padding-top:120px}
+  body .poster .sun-deco{width:200px}
+  body .poster .s-g{display:none}
+}
