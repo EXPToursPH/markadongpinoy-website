@@ -384,3 +384,39 @@ footer a:hover{color:var(--yellow)}
 .industries-sec{padding-top:0}
 @media (max-width:980px){ .teasers{grid-template-columns:1fr 1fr} .page-head .sun-deco{width:260px;right:-110px;top:-80px} }
 @media (max-width:640px){ .teasers{grid-template-columns:1fr} .teaser{min-height:0} .page-head{padding:48px 0 32px} }
+
+/* ---------- Phone & tablet fixes ---------- */
+html,body{overflow-x:clip}
+.results-head{flex-wrap:wrap;gap:2px 12px}
+.listing small .px{white-space:nowrap}
+/* the banner below already carries the sun */
+.grace-sun{display:none}
+
+@media (max-width:980px){
+  /* hero sun: tucked behind the headline instead of the buttons */
+  .hero{overflow:hidden}
+  .hero-panel{position:static}
+  .hero-sun{width:230px;left:auto;right:-100px;top:56px;transform:none}
+  .grace-sun{display:none}
+}
+@media (max-width:640px){
+  /* underlines follow each wrapped line */
+  .ruled span{display:inline;border-bottom:0;margin:0;padding:0;text-decoration:underline;text-decoration-thickness:.085em;text-decoration-skip-ink:none;text-underline-offset:.14em}
+  .ruled{line-height:1.12}
+  .hero-sun{width:180px;right:-100px;top:30px}
+  /* page headers: sun sits above the title */
+  .page-head{padding-top:120px}
+  .page-head h1{font-size:clamp(2.3rem,10.5vw,3rem)}
+  .page-head .sun-deco{width:170px;right:-60px;top:-55px}
+  /* pricing banner: keep the title clear */
+  .pricing-top{padding-top:120px}
+  .pricing-top .sun-deco{width:150px;left:-60px;top:-45px}
+  .pricing-top .q1{width:90px;height:90px}
+  .pricing-top .q2,.pricing-top .h1{display:none}
+  /* closing banner: sun above the headline, buttons aligned */
+  .poster{padding-top:150px}
+  .poster .sun-deco{width:170px;right:-30px;top:-45px}
+  .poster .ctas{margin-left:0!important}
+  .poster .ctas .btn{width:100%}
+  .shapes{height:250px}
+}

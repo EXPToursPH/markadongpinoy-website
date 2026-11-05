@@ -33,7 +33,7 @@ if (document.getElementById('budget')) {
     const hits = LISTINGS.filter(l => l.price <= b && (c === 'all' || l.cat === c)).sort((x, y) => y.price - x.price).slice(0, 3);
     countEl.textContent = hits.length ? `Top matches within ${peso(b)}` : 'No matches yet';
     resultsEl.innerHTML = hits.length
-      ? hits.map(l => `<div class="listing"><div><h4>${l.name}</h4><small>${l.type} • ${l.size} • ${peso(l.price)}</small></div>${seal}</div>`).join('')
+      ? hits.map(l => `<div class="listing"><div><h4>${l.name}</h4><small>${l.type} • ${l.size} • <span class="px">${peso(l.price)}</span></small></div>${seal}</div>`).join('')
       : '<p class="empty">Try a higher budget or another category.</p>';
     document.querySelectorAll('.cat').forEach(btn => btn.classList.toggle('on', btn.dataset.cat === c));
   }
